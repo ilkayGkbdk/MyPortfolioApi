@@ -1,0 +1,15 @@
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/bin/Debug/net9.0/MyPortfolioApi.Application.deps.json
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/bin/Debug/net9.0/MyPortfolioApi.Application.dll
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/bin/Debug/net9.0/MyPortfolioApi.Application.pdb
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/bin/Debug/net9.0/MyPortfolioApi.Domain.dll
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/bin/Debug/net9.0/MyPortfolioApi.Domain.pdb
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/obj/Debug/net9.0/MyPortfolioApi.Application.csproj.AssemblyReference.cache
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/obj/Debug/net9.0/MyPortfolioApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/obj/Debug/net9.0/MyPortfolioApi.Application.AssemblyInfoInputs.cache
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/obj/Debug/net9.0/MyPortfolioApi.Application.AssemblyInfo.cs
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/obj/Debug/net9.0/MyPortfolioApi.Application.csproj.CoreCompileInputs.cache
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/obj/Debug/net9.0/MyPortfo.0C6818D6.Up2Date
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/obj/Debug/net9.0/MyPortfolioApi.Application.dll
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/obj/Debug/net9.0/refint/MyPortfolioApi.Application.dll
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/obj/Debug/net9.0/MyPortfolioApi.Application.pdb
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Application/obj/Debug/net9.0/ref/MyPortfolioApi.Application.dll

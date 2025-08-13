@@ -1,0 +1,11 @@
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/bin/Debug/net9.0/MyPortfolioApi.Domain.deps.json
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/bin/Debug/net9.0/MyPortfolioApi.Domain.dll
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/bin/Debug/net9.0/MyPortfolioApi.Domain.pdb
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/obj/Debug/net9.0/MyPortfolioApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/obj/Debug/net9.0/MyPortfolioApi.Domain.AssemblyInfoInputs.cache
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/obj/Debug/net9.0/MyPortfolioApi.Domain.AssemblyInfo.cs
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/obj/Debug/net9.0/MyPortfolioApi.Domain.csproj.CoreCompileInputs.cache
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/obj/Debug/net9.0/MyPortfolioApi.Domain.dll
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/obj/Debug/net9.0/refint/MyPortfolioApi.Domain.dll
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/obj/Debug/net9.0/MyPortfolioApi.Domain.pdb
+/Users/ilkaygokbudak/Development/Projects/MyPortfolioApi/Core/MyPortfolioApi.Domain/obj/Debug/net9.0/ref/MyPortfolioApi.Domain.dll

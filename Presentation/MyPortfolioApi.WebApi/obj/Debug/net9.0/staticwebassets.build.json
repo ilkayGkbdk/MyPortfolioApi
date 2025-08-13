@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "+LSBpSBi0cacser+FedaxD1gPprxi2xWMSj3vrX6Zuc=",
+  "Source": "MyPortfolioApi.WebApi",
+  "BasePath": "_content/MyPortfolioApi.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
