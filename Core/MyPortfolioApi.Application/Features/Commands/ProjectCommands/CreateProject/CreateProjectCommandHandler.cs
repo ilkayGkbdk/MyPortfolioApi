@@ -1,8 +1,11 @@
 using System;
+using System.Net;
 using AutoMapper;
 using MediatR;
+using MyPortfolioApi.Application.Exceptions;
 using MyPortfolioApi.Application.Repositories.Project;
 using MyPortfolioApi.Domain.Entities;
+using MyPortfolioApi.Domain.Exceptions;
 
 namespace MyPortfolioApi.Application.Features.Commands.ProjectCommands.CreateProject;
 
@@ -21,16 +24,7 @@ public class CreateProjectCommandHandler : IRequestHandler<CreateProjectCommandR
 
     public async Task<CreateProjectCommandResponse> Handle(CreateProjectCommandRequest request, CancellationToken cancellationToken)
     {
-        var projectWithThumbnail = await _readRepository.GetSingleAsync(p => p.ThumbnailUrl == request.ThumbnailUrl, false);
-
-        if (projectWithThumbnail != null)
-        {
-            return new CreateProjectCommandResponse
-            {
-                Success = false,
-                Message = $"Project with thumbnail url '{request.ThumbnailUrl}' has already exists."
-            };
-        }
+        var projectWithThumbnail = await _readRepository.GetSingleAsync(p => p.ThumbnailUrl == request.ThumbnailUrl, false) ?? throw new ProjectThumbnailAlreadyExists(request.ThumbnailUrl);
 
         var project = _mapper.Map<Project>(request);
         await _writeRepository.AddAsync(project);
@@ -38,7 +32,7 @@ public class CreateProjectCommandHandler : IRequestHandler<CreateProjectCommandR
 
         return new CreateProjectCommandResponse
         {
-            Success = true,
+            Status = HttpStatusCode.OK,
             Message = $"Project with id '{project.Id}' has created successfully."
         };
     }

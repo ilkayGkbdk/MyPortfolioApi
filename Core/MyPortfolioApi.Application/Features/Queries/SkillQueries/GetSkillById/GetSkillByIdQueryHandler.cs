@@ -1,7 +1,9 @@
 using System;
+using System.Net;
 using AutoMapper;
 using MediatR;
 using MyPortfolioApi.Application.DTOs.Skill;
+using MyPortfolioApi.Application.Exceptions;
 using MyPortfolioApi.Application.Repositories.Skill;
 
 namespace MyPortfolioApi.Application.Features.Queries.SkillQueries.GetSkillById;
@@ -19,21 +21,12 @@ public class GetSkillByIdQueryHandler : IRequestHandler<GetSkillByIdQueryRequest
 
     public async Task<GetSkillByIdQueryResponse> Handle(GetSkillByIdQueryRequest request, CancellationToken cancellationToken)
     {
-        var skill = await _readRepository.GetByIdAsync(request.Id);
-        if (skill == null)
-        {
-            return new GetSkillByIdQueryResponse
-            {
-                Success = false,
-                Message = $"Skill with id '{request.Id}' has not exists.",
-                Skill = null
-            };
-        }
+        var skill = await _readRepository.GetByIdAsync(request.Id) ?? throw new DataNotFoundException("Skill", request.Id);
 
-        var skillDto = _mapper.Map<ViewSkillDto>(request);
+        var skillDto = _mapper.Map<ViewSkillDto>(skill);
         return new GetSkillByIdQueryResponse
         {
-            Success = true,
+            Status = HttpStatusCode.OK,
             Skill = skillDto
         };
     }

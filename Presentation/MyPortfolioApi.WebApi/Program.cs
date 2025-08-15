@@ -1,6 +1,7 @@
 using Microsoft.OpenApi.Models;
 using MyPortfolioApi.Application;
 using MyPortfolioApi.Infrastructure;
+using MyPortfolioApi.WebApi.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,7 @@ builder.Services.AddOpenApi();
 
 builder.Services.AddSwaggerGen(options =>
 {
-    options.SwaggerDoc("v1", new OpenApiInfo{ Title = "MyPortfolioApi",  Version = "v1" });
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "MyPortfolioApi", Version = "v1" });
 });
 
 var app = builder.Build();
@@ -25,6 +26,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
 
 app.UseHttpsRedirection();
 

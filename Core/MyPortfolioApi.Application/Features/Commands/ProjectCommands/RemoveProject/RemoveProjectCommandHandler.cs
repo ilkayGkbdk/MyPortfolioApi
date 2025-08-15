@@ -1,5 +1,7 @@
 using System;
+using System.Net;
 using MediatR;
+using MyPortfolioApi.Application.Exceptions;
 using MyPortfolioApi.Application.Repositories.Project;
 
 namespace MyPortfolioApi.Application.Features.Commands.ProjectCommands.RemoveProject;
@@ -17,23 +19,15 @@ public class RemoveProjectCommandHandler : IRequestHandler<RemoveProjectCommandR
 
     public async Task<RemoveProjectCommandResponse> Handle(RemoveProjectCommandRequest request, CancellationToken cancellationToken)
     {
-        var existProject = await _readRepository.GetByIdAsync(request.Id, false);
-        if (existProject == null)
-        {
-            return new RemoveProjectCommandResponse
-            {
-                Success = false,
-                Message = $"Project with id '{request.Id}' has not exists."
-            };
-        }
+        var existProject = await _readRepository.GetByIdAsync(request.Id, false) ?? throw new DataNotFoundException("Project", request.Id);
 
         await _writeRepostiroy.RemoveAsync(request.Id);
         await _writeRepostiroy.SaveChangesAsync();
 
         return new RemoveProjectCommandResponse
         {
-            Success = true,
-            Message = $"Project with id '{existProject.Id}' has updated successfully."
+            Status = HttpStatusCode.OK,
+            Message = $"Project with id '{existProject.Id}' has removed successfully."
         };
     }
 }

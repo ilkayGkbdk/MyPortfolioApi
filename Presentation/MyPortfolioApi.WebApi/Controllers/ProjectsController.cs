@@ -1,5 +1,4 @@
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyPortfolioApi.Application.Features.Commands.ProjectCommands.CreateProject;
 using MyPortfolioApi.Application.Features.Commands.ProjectCommands.RemoveProject;
@@ -34,25 +33,21 @@ namespace MyPortfolioApi.WebApi.Controllers
         {
             var query = new GetProjectByIdQueryRequest(id);
             var response = await _mediator.Send(query);
-            return response.Success ? Ok(response.Project) : BadRequest(new { message = response.Message });
+            return Ok(response.Project);
         }
 
         [HttpPost("create")]
         public async Task<IActionResult> CreateProject([FromBody] CreateProjectCommandRequest request)
         {
             var response = await _mediator.Send(request);
-            var message = response.Message;
-
-            return response.Success ? Ok(new { message }) : BadRequest(new { message });
+            return Ok(response);
         }
 
         [HttpPut("update")]
         public async Task<IActionResult> UpdateProject([FromBody] UpdateProjectCommandRequest request)
         {
             var response = await _mediator.Send(request);
-            var message = response.Message;
-
-            return response.Success ? Ok(new { message }) : BadRequest(new { message });
+            return Ok(response);
         }
 
         [HttpDelete("delete/{id}")]
@@ -60,9 +55,7 @@ namespace MyPortfolioApi.WebApi.Controllers
         {
             var query = new RemoveProjectCommandRequest(id);
             var response = await _mediator.Send(query);
-            var message = response.Message;
-
-            return response.Success ? Ok(new { message }) : BadRequest(new { message });
+            return Ok(response);
         }
     }
 }

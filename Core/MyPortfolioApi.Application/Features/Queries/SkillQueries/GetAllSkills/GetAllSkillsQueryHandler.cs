@@ -2,6 +2,7 @@ using System;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using MyPortfolioApi.Application.DTOs.Skill;
 using MyPortfolioApi.Application.Repositories.Skill;
 
@@ -9,23 +10,25 @@ namespace MyPortfolioApi.Application.Features.Queries.SkillQueries.GetAllSkills;
 
 public class GetAllSkillsQueryHandler : IRequestHandler<GetAllSkillsQueryRequest, GetAllSkillsQueryResponse>
 {
-    private readonly ISkillReadRepository _repository;
+    private readonly ISkillReadRepository _readRepository;
     private readonly IMapper _mapper;
 
-    public GetAllSkillsQueryHandler(ISkillReadRepository repository, IMapper mapper)
+    public GetAllSkillsQueryHandler(ISkillReadRepository readRepository, IMapper mapper)
     {
-        _repository = repository;
+        _readRepository = readRepository;
         _mapper = mapper;
     }
 
     public async Task<GetAllSkillsQueryResponse> Handle(GetAllSkillsQueryRequest request, CancellationToken cancellationToken)
     {
-        var totalCount = _repository.GetAll().Count();
-        var skills = _repository.GetAll()
+        var query = _readRepository.GetAll(false);
+
+        var totalCount = await query.CountAsync();
+        var skills = await query
             .Skip(request.Parameters.PageIndex * request.Parameters.PageSize)
             .Take(request.Parameters.PageSize)
             .ProjectTo<ViewSkillDto>(_mapper.ConfigurationProvider)
-            .ToList();
+            .ToListAsync();
 
         return new GetAllSkillsQueryResponse
         {

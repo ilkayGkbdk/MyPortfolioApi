@@ -1,9 +1,9 @@
 using System;
+using MyPortfolioApi.Application.DTOs.Common;
 
 namespace MyPortfolioApi.Application.Features.Commands.ProjectCommands.CreateProject;
 
-public class CreateProjectCommandResponse
+public class CreateProjectCommandResponse : BaseResponseDto
 {
-    public bool Success { get; set; }
-    public string Message { get; set; } = string.Empty;
+
 }
